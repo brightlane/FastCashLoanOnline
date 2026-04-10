@@ -1,0 +1,21 @@
+{
+  "campaign": "MaxLend Standalone 2026",
+  "base_url": "https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWebWeb",
+  "posts": [
+    {
+      "platform": "X/Twitter",
+      "copy": "Unexpected bill? 🚨 MaxLend offers installment loans up to $2k with same-day funding. Skip the bank line. Check eligibility: {base_url}",
+      "schedule": "Monday 9:00 AM CT"
+    },
+    {
+      "platform": "LinkedIn",
+      "copy": "In 2026, alternative lending is bridging the gap for short-term needs. MaxLend provides a structured installment path for emergency cash. Verified details here: {base_url}",
+      "schedule": "Wednesday 10:30 AM CT"
+    },
+    {
+      "platform": "Facebook",
+      "copy": "Need cash before the weekend? 💸 Apply for a MaxLend installment loan before 11:45 AM today for same-day funding. No traditional credit score impact for the initial check! {base_url}",
+      "schedule": "Friday 8:15 AM CT"
+    }
+  ]
+}
