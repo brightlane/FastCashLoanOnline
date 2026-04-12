@@ -1,0 +1,31 @@
+name: Daily SEO Content Bot
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs at exactly midnight every day
+  workflow_dispatch: # Allows you to click a button to run it manually
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Content Factory
+        run: python index-ping.py
+
+      - name: Push Updates to GitHub
+        run: |
+          git config --global user.name 'SEO-Automator'
+          git config --global user.email 'bot@brightlane.github.io'
+          git add .
+          git commit -m "Automated SEO Refresh: $(date)"
+          git push
