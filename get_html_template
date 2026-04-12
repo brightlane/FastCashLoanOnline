@@ -1,0 +1,19 @@
+<footer style="background: #f1f1f1; padding: 40px 20px; font-size: 0.75rem; color: #444; border-top: 1px solid #ccc;">
+    <div style="max-width: 900px; margin: auto; text-align: left;">
+        <p><strong>Contact MaxLend:</strong><br>
+        Phone: 1-877-936-4336 | Email: customerservice@maxlend.com<br>
+        Address: 145 Tribal Business Council Rd, Mandaree, ND 58757</p>
+        
+        <p><strong>Legal Disclosures:</strong><br>
+        MaxLend is an entity of the Mandan, Hidatsa, and Arikara Nation, a federally recognized sovereign American Indian Tribe. This is an expensive form of borrowing. MaxLend loans are designed to assist you with short-term financial needs and are not intended for long-term financial solutions.</p>
+        
+        <p><strong>Privacy & APR:</strong><br>
+        APR for installment loans varies by state and creditworthiness. Please review the official <a href="https://www.maxlend.com/privacy-policy" target="_blank">Privacy Policy</a> and <a href="https://www.maxlend.com/terms-of-use" target="_blank">Terms of Use</a>. By submitting an application, you agree to the Tribal law governing this agreement.</p>
+        
+        <p style="text-align: center; margin-top: 20px;">
+            Last Updated: {datetime.date.today().strftime("%B %d, 2026")} | 
+            <a href="privacy.html">Site Privacy Policy</a> | 
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </div>
+</footer>
