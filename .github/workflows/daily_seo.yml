@@ -1,20 +1,23 @@
 name: Daily SEO Update
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
-  workflow_dispatch: # Allows you to run it manually for testing
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4 # Updated version
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5 # Updated version
         with:
-          python-version: '3.x'
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests # This is usually why it fails—requests is missing
 
       - name: Run SEO Script
         run: python index-ping.py
@@ -24,5 +27,5 @@ jobs:
           git config --global user.name 'SEO-Bot'
           git config --global user.email 'bot@brightlane.io'
           git add .
-          git commit -m "Daily Freshness Update - $(date)"
+          git commit -m "Daily Freshness Update - $(date)" || echo "No changes to commit"
           git push
