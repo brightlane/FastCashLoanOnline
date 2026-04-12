@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Specifically invite Bing and Google to your sitemap
+Sitemap: https://brightlane.github.io/FastCashLoanOnline/sitemap.xml
+
+# Prevent crawlers from getting stuck in technical folders
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /.github/
+
+# Crawl-delay for non-major bots to save your GitHub bandwidth
+User-agent: *
+Crawl-delay: 10
