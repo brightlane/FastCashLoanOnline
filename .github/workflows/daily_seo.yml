@@ -4,20 +4,27 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Clears the deprecation warning
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4 # Updated version
+        uses: actions/checkout@v4
+
+      # Ensure the images folder exists or the script might crash
+      - name: Create images dir if missing
+        run: mkdir -p images
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # Updated version
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests # This is usually why it fails—requests is missing
+        run: pip install requests
 
       - name: Run SEO Script
         run: python index-ping.py
