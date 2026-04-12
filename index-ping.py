@@ -8,8 +8,9 @@ import os
 BASE_URL = "https://brightlane.github.io/FastCashLoanOnline"
 INDEXNOW_KEY = "817c039b282227a69abd9cfa9f9b87f2"
 AFFILIATE_URL = "https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb"
+LOGO_PATH = "images/Mr-owl-with-brown-eyes.jpg"
 
-# The 10 Targeted Keywords & Filenames
+# The 10 Targeted Keywords & Filenames (Your 10-page trick)
 PAGES_TO_GENERATE = {
     "index.html": "Fast Cash Loans Online",
     "maxlendfastcash.html": "MaxLend Online Loans",
@@ -23,101 +24,112 @@ PAGES_TO_GENERATE = {
     "small-personal-loans.html": "Small Personal Loans Fast"
 }
 
-STATES = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Florida", "Georgia", "Texas", "Ohio"]
+STATES = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Florida", "Georgia", "Texas", "Ohio", "New York", "Illinois"]
 
-# --- 2. THE CONTENT GENERATOR (3,000 Word Logic) ---
-def generate_fresh_content(keyword, state):
+# --- 2. THE CONTENT GENERATOR (3,000 Word SEO Engine) ---
+def generate_3000_words(keyword, state):
     today = datetime.date.today().strftime("%B %d, 2026")
     
-    # Dynamic Headers
-    content = f"<h2>How to get {keyword} in {state} on {today}</h2>"
-    content += f"<p>Searching for {keyword} in {state} has increased by 40% this week. If you need immediate funding, MaxLend provides a secure path to capital without the hurdles of traditional banking.</p>"
+    # Core SEO Content Logic
+    content = f"<h2>Get {keyword} in {state} - Verified for {today}</h2>"
+    content += f"<p>If you are searching for {keyword} in {state}, you need a solution that is fast, secure, and transparent. MaxLend offers specialized tribal lending options for those who need immediate capital for emergencies like car repairs or medical bills.</p>"
     
-    # Modular Blocks to hit 3,000 words
-    # We use a loop to simulate high-volume educational content about lending laws and strategies
-    filler_topics = [
-        f"Understanding the APR of {keyword} in {state}.",
-        f"Why {state} residents prefer online installment loans over storefronts.",
-        f"How to improve your approval odds for {keyword}.",
-        "The role of Tribal Sovereignty in modern lending."
+    # Expand to 3,000 words using modular financial advice blocks
+    topics = [
+        f"The Legal Landscape of {keyword} in {state}",
+        "Understanding High-Interest Installment Loans",
+        "How to Qualify for a Loan with Bad Credit",
+        "The Benefits of Same-Day Funding",
+        "Managing Your Debt: A Smart Repayment Guide",
+        "Why MaxLend Beats Local Payday Lenders"
     ]
     
-    for topic in filler_topics:
+    for topic in topics:
         content += f"<h3>{topic}</h3>"
-        content += f"<p>This deep dive into {keyword} explores why transparency matters. {state} borrowers often face high-interest cycles, but by using a 'Pay-Ahead' strategy, you can minimize costs...</p>"
-        # Repeat/Expand text blocks to reach the 3,000-word SEO threshold
-        content += "<p>Lorem ipsum logic: Detailed financial advice text goes here... " * 20
-        
+        content += f"<p>Detailed information regarding {topic} as it pertains to {keyword}. In {state}, borrowers often overlook the fine print, but MaxLend ensures you have all the facts before you sign. "
+        content += "Financial empowerment starts with knowing your options. " * 30 # Filler logic to ensure high word count for crawlers
+        content += "</p>"
+    
     return content
 
-# --- 3. THE TEMPLATE BUILDER ---
-def get_template(title, keyword):
+# --- 3. THE BEAUTIFUL TEMPLATE ---
+def get_html_template(title, keyword, body_content):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - 2026 Fast Approval</title>
+    <title>{title} | MaxLend Fast Cash 2026</title>
     <style>
         :root {{ --primary: #004080; --secondary: #e60000; }}
-        body {{ font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f9; color: #333; }}
-        header {{ background: var(--primary); color: white; padding: 40px; text-align: center; border-bottom: 5px solid var(--secondary); }}
-        .logo {{ height: 100px; border-radius: 50%; border: 3px solid white; }}
-        .cta-btn {{ display: inline-block; background: var(--secondary); color: white; padding: 18px 35px; font-size: 1.4rem; font-weight: bold; text-decoration: none; border-radius: 50px; margin: 20px 0; }}
-        .container {{ max-width: 900px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; }}
+        body {{ font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f9; color: #333; line-height: 1.6; }}
+        header {{ background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--secondary); }}
+        .logo {{ height: 100px; border-radius: 50%; border: 3px solid white; background: white; }}
+        .cta-btn {{ display: inline-block; background: var(--secondary); color: white; padding: 18px 35px; font-size: 1.4rem; font-weight: bold; text-decoration: none; border-radius: 50px; margin: 20px 0; box-shadow: 0 4px 15px rgba(230,0,0,0.3); }}
+        .container {{ max-width: 900px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }}
+        footer {{ text-align: center; padding: 40px; font-size: 0.8rem; color: #666; }}
         .sticky-footer {{ position: fixed; bottom: 0; width: 100%; background: white; padding: 10px; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }}
     </style>
 </head>
 <body>
     <header>
-        <a href="{AFFILIATE_URL}"><img src="images/Mr-owl-with-brown-eyes.jpg" class="logo" alt="Logo"></a>
+        <a href="{AFFILIATE_URL}"><img src="{LOGO_PATH}" class="logo" alt="MaxLend Owl Logo"></a>
         <h1>{keyword}</h1>
-        <a href="{AFFILIATE_URL}" class="cta-btn">GET CASH NOW</a>
+        <p>Instant Approval • No Hard Credit Pull • Funds by 5PM</p>
+        <a href="{AFFILIATE_URL}" class="cta-btn">APPLY NOW</a>
     </header>
     <div class="container">
-        </div>
-    <div class="sticky-footer"><a href="{AFFILIATE_URL}" class="cta-btn" style="font-size:1rem; padding:10px 20px;">APPLY TODAY</a></div>
-    <footer style="text-align:center; padding:40px; font-size:0.8rem;">
-        Last Updated: {datetime.date.today().strftime("%B %d, 2026")}
+        {body_content}
+    </div>
+    <div class="sticky-footer">
+        <a href="{AFFILIATE_URL}" class="cta-btn" style="font-size: 1rem; margin: 0; padding: 10px 25px;">CHECK YOUR RATE</a>
+    </div>
+    <footer>
+        <p>&copy; 2026 Fast Cash Loan Online. All Rights Reserved.</p>
+        <p>Last Updated: {datetime.date.today().strftime("%B %d, 2026")}</p>
     </footer>
 </body>
 </html>"""
 
-# --- 4. EXECUTION ---
+# --- 4. THE EXECUTION ENGINE ---
 generated_urls = []
 
-for filename, title in PAGES_TO_GENERATE.items():
-    keyword = title
+for filename, keyword in PAGES_TO_GENERATE.items():
     state = random.choice(STATES)
+    body = generate_3000_words(keyword, state)
+    final_html = get_html_template(keyword, keyword, body)
     
-    # 1. Create the base HTML structure
-    html_content = get_template(title, keyword)
-    
-    # 2. Generate the 3,000 words
-    fresh_body = generate_fresh_content(keyword, state)
-    
-    # 3. Inject content
-    final_html = html_content.replace("", fresh_body)
-    
-    # 4. Save file
     with open(filename, "w", encoding="utf-8") as f:
         f.write(final_html)
     
     generated_urls.append(f"{BASE_URL}/{filename}")
-    print(f"Successfully generated {filename}")
+    print(f"Generated: {filename}")
 
-# --- 5. PING BING (IndexNow) ---
-def ping_bing(key, url_list):
-    data = {{
+# --- 5. DYNAMIC SITEMAP GENERATION ---
+def update_sitemap(urls):
+    today = datetime.date.today().strftime("%Y-%m-%d")
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for url in urls:
+        xml += f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.8</priority>\n  </url>\n"
+    xml += "</urlset>"
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(xml)
+    print("Sitemap.xml updated.")
+
+update_sitemap(generated_urls)
+
+# --- 6. BING INDEXNOW PING ---
+def ping_bing(key, urls):
+    payload = {
         "host": "brightlane.github.io",
         "key": key,
-        "keyLocation": f"{BASE_URL}/{{key}}.txt",
-        "urlList": url_list
-    }}
+        "keyLocation": f"{BASE_URL}/{key}.txt",
+        "urlList": urls
+    }
     try:
-        r = requests.post("https://www.bing.com/indexnow", json=data, timeout=10)
-        print(f"Bing Notification Status: {{r.status_code}}")
+        r = requests.post("https://www.bing.com/indexnow", json=payload, timeout=10)
+        print(f"Bing IndexNow Ping Status: {r.status_code}")
     except Exception as e:
-        print(f"Ping failed: {{e}}")
+        print(f"Ping failed: {e}")
 
 ping_bing(INDEXNOW_KEY, generated_urls)
