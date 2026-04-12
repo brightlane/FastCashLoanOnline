@@ -35,4 +35,4 @@ jobs:
           git config --global user.email 'bot@brightlane.io'
           git add .
           git commit -m "Daily Freshness Update - $(date)" || echo "No changes to commit"
-          git push
+          git push 
