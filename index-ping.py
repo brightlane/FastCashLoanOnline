@@ -132,4 +132,4 @@ def ping_bing(key, urls):
     except Exception as e:
         print(f"Ping failed: {e}")
 
-ping_bing(INDEXNOW_KEY, generated_urls)
+ping_bing(INDEXNOW_KEY, generated_urls) 
