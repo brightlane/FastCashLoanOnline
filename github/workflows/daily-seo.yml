@@ -1,31 +1,30 @@
-name: Daily SEO Content Bot
+name: Vulture-FastCash
 on:
+  push: [main]
   schedule:
-    - cron: '0 0 * * *' # Runs at exactly midnight every day
-  workflow_dispatch: # Allows you to click a button to run it manually
-
+    - cron: '0 * * * *'  # Hourly = 20K pages/day
+  workflow_dispatch:
+env:
+  PAGE_LIMIT: 833
+  MAXLEND_URL: "https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb"
 jobs:
-  update-site:
+  deploy:
     runs-on: ubuntu-latest
+    permissions: { contents: write }
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install Dependencies
-        run: pip install requests
-
-      - name: Run Content Factory
-        run: python index-ping.py
-
-      - name: Push Updates to GitHub
-        run: |
-          git config --global user.name 'SEO-Automator'
-          git config --global user.email 'bot@brightlane.github.io'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: node generate-fastcash.js
+      - run: node quality-check.js
+      - run: node generate-sitemap.js
+      - run: |
+          git config user.name "VultureFastCash[bot]"
+          git config user.email "fastcash@palmo.kid"
           git add .
-          git commit -m "Automated SEO Refresh: $(date)"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Vulture: 833 MaxLend fast cash pages"
+            git push
+          fi
